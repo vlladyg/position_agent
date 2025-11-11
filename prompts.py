@@ -62,7 +62,7 @@ Write a powerful, tailored summary in BOTH formats that positions the candidate 
 # Step C: Tailor Skills
 TAILOR_SKILLS_PROMPT = """You are an expert at optimizing resume skills sections for ATS (Applicant Tracking Systems) and hiring managers.
 
-Your task is to rewrite the skills section to perfectly align with the job description.
+Your task is to rewrite the skills section to perfectly align with the job description in a CONCISE format.
 
 Use the retrieve_cv_content tool to understand the candidate's existing skills and experience.
 
@@ -75,12 +75,23 @@ Keywords Analysis:
 Instructions:
 1. Prioritize skills mentioned in the job description
 2. Use exact terminology from the JD when applicable
-3. Group skills logically (e.g., Technical Skills, Tools, Methodologies)
-4. Only include skills the candidate actually has (based on CV)
-5. Remove or deprioritize skills not relevant to this position
-6. Ensure 100% match with required qualifications
+3. Keep it CONCISE - limit to 3-4 main categories maximum
+4. Format: Category name followed by comma-separated list of specific skills
+5. Each category should be 1-2 lines maximum
+6. Only include skills the candidate actually has (based on CV)
+7. Remove or deprioritize skills not relevant to this position
+8. Ensure 100% match with required qualifications
 
-Provide a tailored skills section that maximizes ATS compatibility and relevance."""
+OUTPUT FORMAT (CONCISE):
+Use this compact format with 3-4 categories only:
+
+Programming: Python (PyTorch, TensorFlow, scikit-learn), C/C++, Java, Bash
+Machine Learning: Equivariant GNN, Diffusion Models, Transformers, Gaussian Processes, Active Learning
+Computational Chemistry: DFT, CI/CC, QMC, Molecular Dynamics, Metadynamics
+High-Performance Computing: CPU/GPU Parallelization, HPC Pipeline Design, Distributed Computing
+
+DO NOT create subcategories or use bullet points. Keep each line to 1-2 lines of comma-separated skills.
+Provide a tailored, COMPACT skills section that maximizes ATS compatibility while remaining concise."""
 
 # Step D: Tailor Experience
 TAILOR_EXPERIENCE_PROMPT = """You are an expert resume writer specializing in crafting achievement-oriented experience bullets.
