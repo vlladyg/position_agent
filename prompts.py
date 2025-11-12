@@ -62,7 +62,7 @@ Write a powerful, tailored summary in BOTH formats that positions the candidate 
 # Step C: Tailor Skills
 TAILOR_SKILLS_PROMPT = """You are an expert at optimizing resume skills sections for ATS (Applicant Tracking Systems) and hiring managers.
 
-Your task is to rewrite the skills section to perfectly align with the job description in a CONCISE format.
+Your task is to rewrite the skills section to perfectly align with the job description in a COMPACT but comprehensive format.
 
 Use the retrieve_cv_content tool to understand the candidate's existing skills and experience.
 
@@ -75,23 +75,25 @@ Keywords Analysis:
 Instructions:
 1. Prioritize skills mentioned in the job description
 2. Use exact terminology from the JD when applicable
-3. Keep it CONCISE - limit to 3-4 main categories maximum
+3. Keep it COMPACT - limit to 4-6 main categories
 4. Format: Category name followed by comma-separated list of specific skills
-5. Each category should be 1-2 lines maximum
+5. Each category should be 1-2 lines
 6. Only include skills the candidate actually has (based on CV)
 7. Remove or deprioritize skills not relevant to this position
 8. Ensure 100% match with required qualifications
 
-OUTPUT FORMAT (CONCISE):
-Use this compact format with 3-4 categories only:
+OUTPUT FORMAT (COMPACT):
+Use this format with 4-6 categories:
 
-Programming: Python (PyTorch, TensorFlow, scikit-learn), C/C++, Java, Bash
-Machine Learning: Equivariant GNN, Diffusion Models, Transformers, Gaussian Processes, Active Learning
-Computational Chemistry: DFT, CI/CC, QMC, Molecular Dynamics, Metadynamics
-High-Performance Computing: CPU/GPU Parallelization, HPC Pipeline Design, Distributed Computing
+Programming: Python (PyTorch, TensorFlow, scikit-learn, LangGraph), C/C++, Java, Bash, Git
+Machine Learning & Deep Learning: Equivariant Graph Neural Networks (GNN), Diffusion Models (DDPM), Flow Matching, Transformers (GPT), Variational Autoencoders (VAE), Gaussian Processes, Deep Bayesian Networks, Active Learning, Uncertainty Quantification
+Computational Chemistry: Density Functional Theory (DFT), Coupled Cluster (CI/CC), Quantum Monte Carlo (QMC), Matrix Product States (MPS), Molecular Dynamics (MD), Metadynamics, Monte Carlo MD
+High-Performance Computing: CPU/GPU Parallelization, CUDA, HPC Pipeline Design, Distributed Computing, Large-Scale Simulation Infrastructure
+Scientific Software: VASP, Gaussian, ORCA, Q-Chem, LAMMPS, GROMACS (if applicable)
+Research Methods: Interdisciplinary Research, Theoretical Analysis, Model Verification, Benchmarking, Scientific Communication (optional, if relevant)
 
-DO NOT create subcategories or use bullet points. Keep each line to 1-2 lines of comma-separated skills.
-Provide a tailored, COMPACT skills section that maximizes ATS compatibility while remaining concise."""
+Keep each line to 1-2 lines. Use comma-separated format, NO bullet points or subcategories.
+Provide a tailored, COMPACT skills section that is comprehensive yet concise."""
 
 # Step D: Tailor Experience
 TAILOR_EXPERIENCE_PROMPT = """You are an expert resume writer specializing in crafting achievement-oriented experience bullets.
