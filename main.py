@@ -27,8 +27,8 @@ load_dotenv()
 
 # Initialize LLM with GPT-5 (using gpt-4o as latest available model)
 # Update to "gpt-5" when available through OpenAI API
-#llm = ChatOpenAI(model="gpt-4.1", temperature=0.0)
-llm = ChatOpenAI(model="o3")
+llm = ChatOpenAI(model="gpt-5", temperature=0.4)
+#llm = ChatOpenAI(model="o3")
 
 # Get retriever tools
 retriever_tools = get_retriever_tools()
